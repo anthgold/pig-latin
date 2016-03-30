@@ -1,14 +1,15 @@
 // business logic
 var leapYear = function(year) {
-  var blank = "";
-  if ((blank === "") || (year < 0)) {
-    alert("please enter a year");
-  } else if
-    ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
+  if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
       return true;
   } else {
       return false;
   }
+  // var blank;
+  // if ((blank === "") || (year < 0)) {
+  //   $("#result").hide();
+  //   alert("please enter a year");
+  // }
 };
 
 // user interface logic
@@ -17,15 +18,31 @@ $(document).ready(function() {
     event.preventDefault();
     var year = parseInt($("input#year").val());
     var result = leapYear(year);
-
     $(".year").text(year);
-
-    if (!result) {                 // same as writing if (result === false)
+    // Validation Test
+    if (($("input#year").val() === "") || (year < 0)) {
+      $("#result").hide();
+      alert("please enter a year");
+    // Data Test
+    } else if (!result) {                 // same as writing if (result === false)
       $(".not").text("not");
+      $("#result").show();
     } else {
       $(".not").text("");
+      $("#result").show();
     }
 
-    $("#result").show();
+
+
+
+
+
+
   });
+  // var blank = "";
+  // if ((blank === "") || (year < 0)) {
+  //   $("#result").hide();
+  //   alert("please enter a year");
+  // }
+
 });
