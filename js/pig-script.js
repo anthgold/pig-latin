@@ -1,35 +1,49 @@
 // business logic
-$(document).ready(function() {
-  $("#submit").click(function(event) {
-    var vowels = ["a", "e", "i", "o", "u"];
-    var english = $("#english").val().split("");
-    var latin = [];
-    for (var i = 0; i < vowels.length; i++) {
-      if (english[0] === vowels[i]) {
-        return true;
+var latin;
+var vowels = ["a", "e", "i", "o", "u"];
+var isVowel = function(letter) {
+  for (var i = 0; i < vowels.length; i++) {
+    if (letter[0] === vowels[i]) {
+      return true;
+    }
+  }
+  return false;
+};
+var letterShift = function(word) {
+  latin = word.split("");
+  latin.push(latin.shift());
+  latin = latin.join("");
+  console.log(latin);
+};
+var translate = function(english) {
+  var splitPhrase =  english.split(" ");
+  var englishArray = [];
+  splitPhrase.forEach(function(word) {
+    console.log(word);
+    latin = word;
+    for (var i = 0; i < word.length; i++) {
+      if (isVowel(latin[0])) {
+        // vowel logic
+        englishArray.push(latin + "ay");
+        console.log(englishArray);
+        break;
       } else {
-        return false;
-      }
+        // consonant logic
+        letterShift(latin);
+      } 
     }
+  });
+  $(".translation").text(englishArray.join(" "));
+};
+// end of borrowing
+
 // user interface logic
-// not working yet ; borrowed from earlier
+$(document).ready(function() {
+  $("#pig-latin").submit(function(event) {
     event.preventDefault();
-    var result = english(); // may need an argument
-    $(".english").text(year);
-    // Validation Test e.g. numbers to do
-    // if (english[0] === vowels[i]) {
-    //   $("#result").hide();
-    //   alert(" ");
-    // Data Test add } "else" when we add validation test
-  if (!result) { // same as writing if (result === false)
-    alert ("Holy shit!");
-      // $(".not").text("not");
-      // $("#result").show();
-    }
-    //  else {
-    //   $(".not").text("");
-    //   $("#result").show();
-    // }
+    var result = $("#english").val();
+    translate(result);
+    $(".latin").show;
 
   });
 });
