@@ -5,11 +5,6 @@ var leapYear = function(year) {
   } else {
       return false;
   }
-  // var blank;
-  // if ((blank === "") || (year < 0)) {
-  //   $("#result").hide();
-  //   alert("please enter a year");
-  // }
 };
 
 // user interface logic
@@ -31,18 +26,5 @@ $(document).ready(function() {
       $(".not").text("");
       $("#result").show();
     }
-
-
-
-
-
-
-
   });
-  // var blank = "";
-  // if ((blank === "") || (year < 0)) {
-  //   $("#result").hide();
-  //   alert("please enter a year");
-  // }
-
 });
