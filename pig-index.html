@@ -2,9 +2,9 @@
 <html>
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/leap-styles.css" rel="stylesheet" type="text/css">
+    <link href="css/pig-styles.css" rel="stylesheet" type="text/css">
     <script src="js/jquery-1.12.2.js"></script>
-    <script src="js/leap-scripts.js"></script>
+    <script src="js/pig-script.js"></script>
     <title>Pig latin translator</title>
   </head>
   <body>
@@ -13,16 +13,16 @@
       <!-- User inputs sentence here -->
       <form id="pig-latin">
         <div class="form-group">
-          <label for="latin">Please enter a word or sentence:</label>
-          <input id="latin" type="text">
+          <label for="english">Please enter a word or sentence:</label>
+          <input id="english" type="text">
         </div>
         <!-- Submit button -->
-        <button type="submit" class="btn">anslateTray!</button>
+        <button type="submit" id="submit" class="btn">anslateTray!</button>
       </form>
       <!-- Barf out the output here -->
-      <div id="result">
-        <!-- To-do: adapt to Pig Latin function -->
-        <div id="output"></div>
+
+      <div id=result>
+        <div id="latin"></div>
       </div>
     </div>
   </body>

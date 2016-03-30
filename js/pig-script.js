@@ -1,15 +1,29 @@
 // business logic
 $(document).ready(function() {
-  $("form#pig-latin").submit(function(event) {
+  $("#submit").click(function(event) {
     event.preventDefault();
+    alert("we made it");
+    $("#latin").show();
 
-    var converted = $("#unconverted").val().toLowerCase().split("");
+    // var converted = $("#unconverted").val().toLowerCase(converted).split(" ");
     var vowels = ["a", "e", "i", "o", "u"];
+    var english = $("#english").val().split("");
 
-    var word = []
-      for (var i = 0; i < 1; i += 1) {
-        if (vowels[i] === "a" || vowels[i] === "e" || vowels[i] === "i" || vowels[i] === "o" || vowels[i] === "u")
-          $(.latin).("ay")
+    var latin = [];
+    console.log(english);
+      for (var i = 0; i < vowels.length; i++) {
+        if (english[0] === vowels[i]){
+          alert("first vowel");
+          // return converted.append('ay');
+          // break;
+        }
+
+
+        }
+      });
+    });
+//         return converted.slice(0).join() + converted[0] + 'ay';
+// }
 
 
 // user interface logic
@@ -31,5 +45,3 @@ $(document).ready(function() {
 //       $(".not").text("");
 //       $("#result").show();
 //     }
-  });
-});
