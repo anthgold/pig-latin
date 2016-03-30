@@ -30,10 +30,11 @@ var translate = function(english) {
       } else {
         // consonant logic
         letterShift(latin);
-      } 
+      }
     }
   });
-  $(".translation").text(englishArray.join(" "));
+  $(".latin").text(englishArray.join(" "));
+  $("#result").show();
 };
 // end of borrowing
 
