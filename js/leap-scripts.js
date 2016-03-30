@@ -19,7 +19,7 @@ $(document).ready(function() {
       $("#result").hide();
       alert("please enter a year");
     // Data Test
-    } else if (!result) {                 // same as writing if (result === false)
+    } else if (!result) { // same as writing if (result === false)
       $(".not").text("not");
       $("#result").show();
     } else {
